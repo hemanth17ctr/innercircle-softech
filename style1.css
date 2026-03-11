@@ -1,0 +1,166 @@
+/* ===== RESET ===== */
+body{
+    margin:0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    /* Animated gradient background */
+    background:linear-gradient(-45deg,#f8fbff,#eaf3ff,#fdfefe,#eef6ff);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+/* Background animation */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ===== FLOATING LIGHT BLOBS ===== */
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    opacity:0.6;
+    animation:float 8s ease-in-out infinite;
+}
+
+body::before{
+    width:350px;
+    height:350px;
+    background:#a8d8ff;
+    top:-120px;
+    left:-120px;
+}
+
+body::after{
+    width:400px;
+    height:400px;
+    background:#cce9ff;
+    bottom:-150px;
+    right:-150px;
+    animation-delay:3s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(40px);}
+}
+
+/* ===== FORM CARD ===== */
+.form-box{
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:20px;
+    width:340px;
+    z-index:1;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.08);
+
+    /* Entrance animation */
+    animation:cardEnter 0.8s ease forwards;
+}
+
+@keyframes cardEnter{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(0.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* ===== HEADING ===== */
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#2c3e50;
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* ===== LABELS ===== */
+label{
+    display:block;
+    margin-top:14px;
+    color:#5a6b7b;
+    font-size:14px;
+}
+
+/* ===== INPUTS ===== */
+input{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:10px;
+    border:1px solid #e2ecf5;
+    background:#f9fcff;
+    outline:none;
+    transition:all 0.3s ease;
+}
+
+input:focus{
+    background:#fff;
+    border-color:#4da6ff;
+    box-shadow:0 0 0 4px rgba(77,166,255,0.18);
+    transform:translateY(-2px);
+}
+
+/* ===== BUTTON ===== */
+button{
+    width:100%;
+    padding:13px;
+    margin-top:25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    color:white;
+
+    background:linear-gradient(135deg,#66b3ff,#4da6ff);
+    position:relative;
+    overflow:hidden;
+
+    transition:all 0.3s ease;
+}
+
+/* Hover lift */
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(77,166,255,0.35);
+}
+
+/* Click ripple animation */
+button::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:0;
+    background:rgba(255,255,255,0.4);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    transition:0.6s;
+}
+
+button:active::after{
+    width:300px;
+    height:300px;
+    opacity:0;
+}

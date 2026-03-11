@@ -1,0 +1,77 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    /* Modern light theme background */
+    background: linear-gradient(
+        135deg,
+        #f8fbff 0%,
+        #eef6ff 40%,
+        #e3f2fd 70%,
+        #f9fcff 100%
+    );
+}
+
+/* Center card */
+.form-box{
+    background:#ffffff;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    width:320px;
+}
+
+/* Heading */
+h2{
+    text-align:center;
+    color:#2c3e50;
+    margin-bottom:20px;
+}
+
+/* Labels */
+label{
+    display:block;
+    margin-top:12px;
+    color:#555;
+    font-size:14px;
+}
+
+/* Inputs */
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #d6e4f0;
+    background:#f9fbfd;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#4da6ff;
+    background:#ffffff;
+    box-shadow:0 0 0 2px rgba(77,166,255,0.15);
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:11px;
+    margin-top:18px;
+    background:#4da6ff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#3399ff;
+}
